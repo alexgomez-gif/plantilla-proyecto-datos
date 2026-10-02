@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proyecto"
+version = "0.1.0"
+description = "Descripción breve del proyecto"
+requires-python = ">=3.11"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+extend-include = ["*.ipynb"]
+
+[tool.ruff.lint]
+select = [
+    "E",   # pycodestyle (errores)
+    "W",   # pycodestyle (advertencias)
+    "F",   # pyflakes
+    "I",   # isort (orden de imports)
+    "N",   # pep8-naming
+    "UP",  # pyupgrade
+    "B",   # flake8-bugbear
+    "SIM", # flake8-simplify
+    "PD",  # pandas-vet
+]
+ignore = []
+
+[tool.ruff.lint.per-file-ignores]
+"notebooks/*" = ["E402"] # imports fuera del inicio en notebooks
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

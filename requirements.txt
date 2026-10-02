@@ -1,0 +1,18 @@
+# Análisis de datos
+numpy>=1.26
+pandas>=2.2
+matplotlib>=3.8
+seaborn>=0.13
+
+# Bases de datos
+sqlalchemy>=2.0
+
+# Notebooks
+jupyterlab>=4.0
+
+# Utilidades
+python-dotenv>=1.0
+
+# Desarrollo
+ruff>=0.6
+pytest>=8.0
