@@ -60,8 +60,8 @@ Desde un notebook o script, importa el código del paquete:
 from proyecto.config import RAW_DIR, leer_sql
 from proyecto.db import conectar, consultar
 
-con = conectar()                         # data/proyecto.duckdb
-df = consultar(con, "ejemplo.sql")       # ejecuta sql/ejemplo.sql
+con = conectar()  # data/proyecto.duckdb
+df = consultar(con, "ejemplo.sql")  # ejecuta sql/ejemplo.sql
 ```
 
 Para Power BI, exporta las tablas finales a `data/processed/` (CSV o Parquet)
