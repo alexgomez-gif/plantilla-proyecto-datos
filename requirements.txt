@@ -6,6 +6,7 @@ seaborn>=0.13
 
 # Bases de datos
 duckdb>=1.5
+requests>=2.32
 sqlalchemy>=2.0
 
 # Notebooks
