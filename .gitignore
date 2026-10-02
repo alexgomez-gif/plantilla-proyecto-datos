@@ -37,5 +37,11 @@ reports/figures/*
 # Sistema operativo / editores
 .DS_Store
 Thumbs.db
-.vscode/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
 .idea/
+
+# Bases de datos locales
+*.duckdb
+*.duckdb.wal

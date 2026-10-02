@@ -5,6 +5,7 @@ matplotlib>=3.8
 seaborn>=0.13
 
 # Bases de datos
+duckdb>=1.5
 sqlalchemy>=2.0
 
 # Notebooks

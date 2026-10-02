@@ -28,16 +28,23 @@ Describe la pregunta de negocio o de investigación, el alcance y los criterios 
 
 ## Requisitos
 
-- Python 3.11 o superior
+- Python 3.12
+- Git
+- VS Code (extensiones recomendadas en `.vscode/extensions.json`)
+- DuckDB (incluido como paquete de Python; la CLI `duckdb` es opcional)
 
 ## Instalación
 
+Cada proyecto tiene su propio entorno virtual en `.venv/`:
+
 ```bash
-python -m venv .venv
+python3.12 -m venv .venv
 source .venv/bin/activate        # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 pip install -e .                 # Instala src/proyecto en modo editable
 ```
+
+VS Code detecta `.venv` automáticamente (ver `.vscode/settings.json`).
 
 ## Uso
 
@@ -50,7 +57,14 @@ Desde un notebook o script, importa el código del paquete:
 
 ```python
 from proyecto.config import RAW_DIR, leer_sql
+from proyecto.db import conectar, consultar
+
+con = conectar()                         # data/proyecto.duckdb
+df = consultar(con, "ejemplo.sql")       # ejecuta sql/ejemplo.sql
 ```
+
+Para Power BI, exporta las tablas finales a `data/processed/` (CSV o Parquet)
+y cárgalas desde Power BI Desktop; guarda los `.pbix` en `reports/`.
 
 ## Calidad de código
 
