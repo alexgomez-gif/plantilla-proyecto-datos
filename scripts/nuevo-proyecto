@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# Crea un proyecto de datos a partir de ~/plantilla-proyecto-datos
+# con su propio entorno virtual (.venv) y repositorio git.
+# Uso: nuevo-proyecto <nombre> [carpeta_destino]
+set -euo pipefail
+
+PLANTILLA="$HOME/plantilla-proyecto-datos"
+NOMBRE="${1:?Uso: nuevo-proyecto <nombre> [carpeta_destino]}"
+DESTINO="${2:-$HOME/proyectos}/$NOMBRE"
+
+if [[ -e "$DESTINO" ]]; then
+    echo "Ya existe: $DESTINO" >&2
+    exit 1
+fi
+
+mkdir -p "$DESTINO"
+git -C "$PLANTILLA" archive HEAD | tar -x -C "$DESTINO"
+cd "$DESTINO"
+
+sed -i "s/^name = \"proyecto\"/name = \"$NOMBRE\"/" pyproject.toml
+sed -i "1s/.*/# $NOMBRE/" README.md
+
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -q --upgrade pip
+.venv/bin/pip install -q -r requirements.txt
+.venv/bin/pip install -q -e .
+
+git init -q -b main
+git add -A
+git commit -q -m "Inicio del proyecto $NOMBRE a partir de la plantilla"
+
+echo "Proyecto creado en $DESTINO"
+echo "Abrir con:  code $DESTINO"

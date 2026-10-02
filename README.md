@@ -23,6 +23,7 @@ Describe la pregunta de negocio o de investigación, el alcance y los criterios 
 ├── tests/            # Pruebas unitarias (pytest)
 ├── pyproject.toml    # Metadatos del paquete y configuración de ruff/pytest
 ├── requirements.txt  # Dependencias
+├── .github/          # CI: ruff y pytest en cada push
 └── README.md
 ```
 

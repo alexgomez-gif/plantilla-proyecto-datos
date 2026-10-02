@@ -1,0 +1,3 @@
+scripts/ export-ignore
+PLANTILLA.md export-ignore
+.gitattributes export-ignore
