@@ -45,3 +45,13 @@ Thumbs.db
 # Bases de datos locales
 *.duckdb
 *.duckdb.wal
+
+# Producción de video (los medios no se versionan; se conserva la estructura)
+videos/**/*.mp4
+videos/**/*.srt
+videos/trabajo/
+assets/musica/**/*
+!assets/musica/**/
+!assets/musica/**/.gitkeep
+assets/sfx/*
+!assets/sfx/.gitkeep

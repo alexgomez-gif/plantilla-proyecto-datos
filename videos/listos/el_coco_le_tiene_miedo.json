@@ -1,0 +1,36 @@
+{
+  "video": "videos/listos/el_coco_le_tiene_miedo.mp4",
+  "duracion": 55.0,
+  "animo_musica": "divertido",
+  "reemplazar_audio_original": true,
+  "guion": [
+    {"inicio": 0.1,  "fin": 1.9,  "texto": "¿Sabes el secreto del Coco?"},
+    {"inicio": 2.0,  "fin": 4.8,  "texto": "¡Al Coco le dan miedo los niños!"},
+    {"inicio": 5.2,  "fin": 9.6,  "texto": "Y hoy es su noche más difícil… ¡Halloween!"},
+    {"inicio": 10.2, "fin": 13.5, "texto": "Toc, toc… ¡un vampiro! Miedo: cuarenta."},
+    {"inicio": 14.0, "fin": 17.0, "texto": "¡Ahora una brujita! Setenta."},
+    {"inicio": 17.5, "fin": 21.5, "texto": "¿Un dinosaurio? ¡Cien! …¡Plof!"},
+    {"inicio": 22.2, "fin": 26.8, "texto": "¡Una calabaza gigante! ¿Quién asustó a quién?"},
+    {"inicio": 27.5, "fin": 32.5, "texto": "¡Era una niña disfrazada!"},
+    {"inicio": 33.0, "fin": 37.8, "texto": "Y le dice: «Yo también te tenía miedo… ¿Hola?»"},
+    {"inicio": 38.2, "fin": 43.6, "texto": "Ella le da un caramelo… ¡y lo comparten!"},
+    {"inicio": 44.2, "fin": 49.6, "texto": "Lo que no conocemos asusta. ¡Pero un hola lo cambia todo!"},
+    {"inicio": 50.2, "fin": 54.5, "texto": "¿A quién le dirías hola tú? ¡Parte dos, mañana!"}
+  ],
+  "efectos": [
+    {"t": 2.0,  "clave": "pop",       "vol": 0.6, "nota": "aparece el Coco"},
+    {"t": 5.0,  "clave": "whoosh",    "vol": 0.5, "nota": "transición POV"},
+    {"t": 10.5, "clave": "toc",       "vol": 0.5, "nota": "llega el vampiro"},
+    {"t": 14.5, "clave": "magia",     "vol": 0.5, "nota": "brujita"},
+    {"t": 18.8, "clave": "rugido",    "vol": 0.35, "nota": "dino, rugido de dibujo animado bajito"},
+    {"t": 20.0, "clave": "plof",      "vol": 0.6, "nota": "el Coco se desmaya"},
+    {"t": 22.0, "clave": "whoosh",    "vol": 0.5, "nota": "transición calabaza"},
+    {"t": 24.4, "clave": "camara",    "vol": 0.5, "nota": "destello blanco"},
+    {"t": 28.5, "clave": "pop",       "vol": 0.6, "nota": "sale la niña"},
+    {"t": 38.0, "clave": "transicion","vol": 0.4, "nota": "cambio de escena"},
+    {"t": 40.0, "clave": "caramelo",  "vol": 0.5, "nota": "envoltorio"},
+    {"t": 42.0, "clave": "corazon",   "vol": 0.5, "nota": "corazoncito"},
+    {"t": 44.0, "clave": "acierto",   "vol": 0.5, "nota": "todos juntos"},
+    {"t": 50.0, "clave": "brillo",    "vol": 0.5, "nota": "guiño final"}
+  ]
+}
