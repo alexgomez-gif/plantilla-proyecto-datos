@@ -1,105 +1,39 @@
-# Nombre del proyecto
+# Portafolio de datos · Alex Gómez
 
-> Una frase que explique qué problema resuelve este proyecto y para quién.
+**Científico de datos.** Construyo sistemas que convierten datos en decisiones, con
+especial interés en ciberseguridad y en sistemas de agentes autónomos.
 
-## Objetivo
+## Proyectos
 
-Describe la pregunta de negocio o de investigación, el alcance y los criterios de éxito.
+| # | Proyecto | Temas | Tecnologías |
+|---|---|---|---|
+| 01 | [SOC multiagente: detección y respuesta coordinada](proyectos/01-soc-multiagente) | Ciberseguridad, agentes autónomos, detección de anomalías | Python |
+| 02 | Próximamente | | |
+| 03 | Próximamente | | |
 
-## Estructura del repositorio
+### 01 · SOC multiagente
+
+Cuatro agentes (monitor, analista, coordinador y respondedor) se comunican por un bus de
+mensajes para detectar fuerza bruta, escaneo de puertos y exfiltración en logs de red, y
+deciden una respuesta según el riesgo. Detecta los tres ataques sin falsos positivos.
+[Ver proyecto →](proyectos/01-soc-multiagente)
+
+## Habilidades
+
+- **Lenguajes:** Python, SQL
+- **Ciencia de datos:** análisis exploratorio, detección de anomalías, modelado
+- **Ingeniería:** pruebas con pytest, calidad con ruff, CI con GitHub Actions
+
+## Estructura
 
 ```
-.
-├── data/
-│   ├── raw/          # Datos originales, inmutables (no versionados)
-│   ├── interim/      # Datos intermedios en transformación
-│   └── processed/    # Datos finales listos para modelar o analizar
-├── notebooks/        # Exploración y análisis (prefijo numérico: 01_exploracion.ipynb)
-├── src/
-│   └── proyecto/     # Código reutilizable importable desde notebooks y scripts
-├── sql/              # Consultas SQL (extracción, vistas, transformaciones)
-├── reports/
-│   └── figures/      # Gráficos e informes generados
-├── tests/            # Pruebas unitarias (pytest)
-├── pyproject.toml    # Metadatos del paquete y configuración de ruff/pytest
-├── requirements.txt  # Dependencias
-├── .github/          # CI: ruff y pytest en cada push
-└── README.md
+proyectos/
+└── 01-soc-multiagente/   # cada proyecto es independiente: su propio README, código y pruebas
 ```
 
-## Requisitos
+Cada proyecto se instala y prueba por separado (ver su README). La CI ejecuta ruff y
+pytest para todos en cada push.
 
-- Python 3.12
-- Git
-- VS Code (extensiones recomendadas en `.vscode/extensions.json`)
-- DuckDB (incluido como paquete de Python; la CLI `duckdb` es opcional)
+## Contacto
 
-## Instalación
-
-Cada proyecto tiene su propio entorno virtual en `.venv/`:
-
-```bash
-python3.12 -m venv .venv
-source .venv/bin/activate        # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-pip install -e .                 # Instala src/proyecto en modo editable
-```
-
-VS Code detecta `.venv` automáticamente (ver `.vscode/settings.json`).
-
-## Uso
-
-```bash
-# Abrir los notebooks
-jupyter lab
-```
-
-Desde un notebook o script, importa el código del paquete:
-
-```python
-from proyecto.config import RAW_DIR, leer_sql
-from proyecto.db import conectar, consultar
-
-con = conectar()  # data/proyecto.duckdb
-df = consultar(con, "ejemplo.sql")  # ejecuta sql/ejemplo.sql
-```
-
-Para Power BI, exporta las tablas finales a `data/processed/` (CSV o Parquet)
-y cárgalas desde Power BI Desktop; guarda los `.pbix` en `reports/`.
-
-## Calidad de código
-
-El estilo se controla con [ruff](https://docs.astral.sh/ruff/) (configurado en `pyproject.toml`).
-
-```bash
-ruff check .            # Linter
-ruff check . --fix      # Corrige automáticamente lo posible
-ruff format .           # Formatea el código
-pytest                  # Ejecuta las pruebas
-```
-
-## Datos
-
-| Fuente | Descripción | Ubicación | Actualización |
-|--------|-------------|-----------|---------------|
-| _ejemplo_ | _Ventas diarias_ | `data/raw/ventas.csv` | _Diaria_ |
-
-Los datos **no se versionan** en git. Documenta aquí cómo obtenerlos o regenerarlos.
-
-## Resultados
-
-Resume los hallazgos principales y enlaza a los informes en `reports/`.
-
-## Convenciones
-
-- Los notebooks se nombran `NN_descripcion.ipynb` (p. ej. `01_exploracion.ipynb`).
-- La lógica reutilizable vive en `src/`, no en los notebooks.
-- Los datos en `data/raw/` nunca se modifican.
-
-## Autoría
-
-- Nombre — correo@ejemplo.com
-
-## Licencia
-
-Indica la licencia del proyecto (p. ej. MIT).
+<!-- Añade aquí tu LinkedIn, correo o web -->

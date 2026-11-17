@@ -5,15 +5,29 @@ on:
   pull_request:
 
 jobs:
-  ruff-pytest:
+  lint:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-          cache: pip
-      - run: pip install -r requirements.txt && pip install -e .
+      - run: pip install -r requirements-dev.txt
       - run: ruff check .
       - run: ruff format --check .
+
+  pruebas:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        proyecto: [01-soc-multiagente]
+    defaults:
+      run:
+        working-directory: proyectos/${{ matrix.proyecto }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r ../../requirements-dev.txt && pip install -e .
       - run: pytest
