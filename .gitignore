@@ -25,14 +25,9 @@ htmlcov/
 # Jupyter
 .ipynb_checkpoints/
 
-# Datos (se conserva la estructura de carpetas)
-data/**
-!data/**/
-!data/**/.gitkeep
-
-# Informes generados
-reports/figures/*
-!reports/figures/.gitkeep
+# Datos e informes generados
+*.duckdb
+informe*.json
 
 # Sistema operativo / editores
 .DS_Store
@@ -41,7 +36,3 @@ Thumbs.db
 !.vscode/settings.json
 !.vscode/extensions.json
 .idea/
-
-# Bases de datos locales
-*.duckdb
-*.duckdb.wal
